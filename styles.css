@@ -1,0 +1,483 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Lower than the overlay */
+}
+
+/* -----------  SECTION --------------- */
+
+.desktop-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+.desktop-nav li {
+    margin: 0 30px;
+}
+
+.desktop-nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+/* Logo styling */
+.desktop-nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav-logo img {
+    height: 80px; /* Adjust height as needed */
+    width: auto;
+}
+
+/* Style for the mobile nav icon (hamburger menu) */
+.mobile-nav-icon {
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0 30px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-nav-icon {
+        display: block;
+    }
+}
+
+/* Fullscreen overlay navigation menu styles */
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1001; /* Higher than the navbar's z-index */
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 60px;
+}
+
+/* ----------- MAIN SECTION --------------- */
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    filter: blur(3px);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* ----------- ABOUT SECTION --------------- */
+
+.about-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ----------- GALLERY SECTION --------------- */
+
+/* Overall Gallery Section Styling */
+.gallery-section {
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Light grey background */
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px; /* Maximum width of the gallery section */
+    text-align: center;
+}
+
+.flickr-albums-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* This will center the albums and manage spacing */
+    padding: 20px;
+}
+
+.flickr-album {
+    flex: 1 1 300px; /* flex-grow, flex-shrink, flex-basis */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.flickr-album img {
+    width: 100%; /* Make the image responsive within its container */
+    height: auto;
+    display: block; /* Remove any extra space below the image */
+}
+
+
+/* Styling for the Flickr embed container */
+.flickr-display {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flickr-display h3 {
+    color: #333;
+}
+
+.flickr-embed img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Hover effects for interactive elements */
+.flickr-embed a {
+    transition: transform 0.3s ease-in-out;
+}
+
+.flickr-embed a:hover {
+    transform: scale(1.05); /* Slightly enlarge the link area on hover */
+}
+
+
+/* ----------- CONTACT SECTION --------------- */
+
+/* Kontakt Sektion Styling */
+.contact-section {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: Center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.contact-text strong {
+    font-size: 1.2rem;
+}
+
+/* Align image and form side-by-side */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-image {
+    flex: 0 0 300px; /* Adjust width as needed */
+}
+
+.contact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Form styles */
+.contact-form {
+    flex: 1;
+    text-align: left;
+    max-width: 600px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+
+
+/* ----------- FOOTER SECTION --------------- */
+
+/* Footer Styling */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-contact, .footer-follow {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-contact p, .footer-follow p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+ #ncc{
+    color: cadetblue;
+    font-size: larger;
+ }
+
+
+/* ----------- RESPONSIVE SETTINGS --------------- */
+
+/* Hide the desktop nav on mobile */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+}
+
+/* Media query for screens less than 600px wide */
+@media (max-width: 600px) {
+
+    nav ul {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .nav-logo img {
+        margin-bottom: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text p, 
+    .about-section p {
+        font-size: 1rem;
+    }
+    .flickr-albums-container {
+        flex-direction: column;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-text {
+        padding-right: 0;
+    }
+
+    .contact-image {
+        margin-bottom: 20px;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact, .footer-follow {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+/* Media query for screens less than 480px wide */
+@media (max-width: 480px) {
+    .overlay {
+        overflow-y: auto;
+    }
+    .overlay a {
+        font-size: 20px;
+    }
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .about-section p {
+        font-size: 0.9rem;
+        padding: 0 10px; /* Adjust padding to prevent text from touching the screen edge */
+    }
+
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-section p {
+        font-size: 1rem;
+    }
+
+    .contact-form label {
+        font-size: 1rem;
+    }
+}
