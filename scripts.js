@@ -28,9 +28,6 @@ function debounce(func, wait) {
     };
 }
 
-
-
-
 // Flickr API credentials
 const apiKey = 'd063838afe1e2053a6aa34c6d3c336e7'; // Your new Flickr API key
 const userId = '201430598@N08'; // Your Flickr User ID (remains unchanged)

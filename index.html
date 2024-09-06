@@ -3,8 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Petersen - Kunstner</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Peter Petersen's art gallery, showcasing charcoal drawings and more.">
+    <meta property="og:title" content="Peter Petersen - Galleri Grønly">
+    <meta property="og:description" content="Peter Petersen's art gallery, showcasing charcoal drawings and more.">
+    <meta property="og:image" content="Assets/Images/pic3.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gallerigrønly.com">
+    <title>Galleri Grønly</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="Assets/Styles/generel.css">
+    <link rel="stylesheet" href="Assets/Styles/aboutSection.css">
+    <link rel="stylesheet" href="Assets/Styles/contactSection.css">
+    <link rel="stylesheet" href="Assets/Styles/gallerySection.css">
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -13,14 +24,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
 </head>
 
 <body>
 <!-- Navigationsmenu -->
 <header>
     <div class="nav-logo">
-        <img src="/Assets/signature.png" alt="Peter Petersen Signature">
+        <img src="Assets/Images/signature.png" alt="Peter Petersen's signature logo">
     </div>
     <nav>
         <ul class="desktop-nav">
@@ -32,7 +42,7 @@
     </nav>
 
     <!-- Hamburger icon for mobile -->
-    <span class="mobile-nav-icon" onclick="openNav()">&#9776;</span>
+    <span class="mobile-nav-icon" aria-label="Open mobile navigation" onclick="openNav()">&#9776;</span>
 </header>
 
 <!-- Fullscreen overlay navigation menu (for mobile screens) -->
@@ -48,9 +58,9 @@
 
 <!-- Hovedsektion -->
 <section id="home">
-    <div class="hero">
-        <img src="/Assets/pic3.jpg" alt="Kul tegning" class="hero-image">
-        <div class="hero-text">
+    <div class="home-section">
+        <img src="Assets/Images/pic3.jpg" alt="A charcoal drawing by Peter Petersen" class="home-image" loading="lazy">
+        <div class="home-text">
             <h1>Peter Petersen</h1>
             <p>Velkommen til mit online galleri. Her kan du finde et udvalg af mine nyeste værker og lære mere om min kunst.</p>
             <a href="#gallery" class="btn">Se mine galleri</a>
@@ -58,35 +68,48 @@
     </div>
 </section>
 
-<!-- "Rejsen her hen" Sektion -->
-<section id="about" class="about-section">
-    <h2>Rejsen her hen</h2>
-    <p>
-        Peter Petersen er en dansk kunstner, der har specialiseret sig i kultegninger. Med mange års erfaring har Peter udviklet en unik stil, der kombinerer det klassiske med det moderne. Fra en tidlig alder har kunsten været en central del af hans liv, og gennem årene har han skabt værker, der reflekterer både hans personlige og kunstneriske rejse.
-    </p>
-</section>
 
-<!-- Karusel Sektion -->
+
+
+<!-- Gallery Sektion -->
 <section id="gallery" class="gallery-section">
     <h2>Gallerier</h2>
     <div class="flickr-albums-container">
         <div class="flickr-album">
             <h2>Malerier</h2> <!-- Subtitle for the first album -->
             <a data-flickr-embed="true" href="https://www.flickr.com/photos/201351918@N05/albums/72177720320052401" title="Malerier">
-                <img src="https://live.staticflickr.com/65535/53969526327_26b6cc0de2.jpg" width="640" height="480" alt="Malerier"/>
+                <img src="https://live.staticflickr.com/65535/53969526327_26b6cc0de2.jpg" width="640" height="480" alt="A collection of paintings by Peter Petersen" loading="lazy" />
             </a>
             <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
         </div>
         <div class="flickr-album">
             <h2>Blyant & Kultegning</h2> <!-- Subtitle for the second album -->
             <a data-flickr-embed="true" href="https://www.flickr.com/photos/201351918@N05/albums/72177720320056127" title="Blyant & Kultegning">
-                <img src="https://live.staticflickr.com/65535/53970894440_6bdce10dac.jpg" width="640" height="480" alt="Blyant & Kultegninger"/>
+                <img src="https://live.staticflickr.com/65535/53970894440_6bdce10dac.jpg" width="640" height="480" alt="Pencil and charcoal drawings by Peter Petersen" loading="lazy"/>
             </a>
             <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
         </div>
     </div>
 </section>
 
+<!-- About Sektion -->
+<section id="about" class="about-section">
+    <div class="about-text">
+        <h2>Rejsen her hen</h2>
+        <p>
+            Mit hjem er et malerisk landsted, omgivet af naturens skønhed mellem Køge og Ringsted. Hver dag vågner jeg op til lyden af fuglesang og vinden, der visker gennem trætoppene. Dette idylliske sted er ikke blot et hus; det er et kunstværk i sig selv, hvor hvert vindue åbner op for panoramaet af grønne marker og åbne himmelstræk.
+        </p><br>
+        <p>
+            Sammen med min elskede Linda deler jeg dette hjørne af paradis, og vores hjem er mere end bare vægge og tag. Det er et sted, hvor kreativitet spirer, og sjælen finder ro. Vores trofaste følgesvend, Ida, bringer ekstra glæde til dette lille hjørne af verden.
+        </p><br>
+        <p>
+            Når penslerne rammer lærredet, trækker jeg inspiration fra det omkringliggende landskab. Farverne på solnedgangen over markerne, træernes dans i vinden og duften af nyslået græs bliver til strøg af kunst på mine værker. Hvert maleri fortæller historien om dette unikke sted, vores hjem, og de følelser, der vækkes af naturens skiftende ansigter.
+        </p><br>
+        <p>
+            Min atelier er ikke bare et rum; det er et fristed for kreativ udfoldelse. Her folder jeg mine tanker ud på lærredet og lader kunsten blomstre. At bo mellem Køge og Ringsted er ikke bare en geografisk placering; det er en livsstil, hvor jeg er forbundet med naturen og dens evigt skiftende nuancer, der inspirerer mig til at male livets skønhed.
+        </p>
+    </div>
+</section>
 
 <!-- Kontakt Sektion -->
 <section id="contact" class="contact-section">
@@ -108,19 +131,22 @@
     <div class="contact-content">
         <!-- Image -->
         <div class="contact-image">
-            <img src="/Assets/pp.png" alt="Peter Petersen">
+            <img src="Assets/Images/pp.png" alt="Portrait of Peter Petersen" loading="lazy">
         </div>
 
         <!-- Contact Form -->
         <form action="#" method="post" class="contact-form">
             <label for="name">Navn:</label>
             <input type="text" id="name" name="name" required>
+            <span class="error-message">Navn er påkrævet.</span>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
+            <span class="error-message">Udfyld en gyldig email-adresse.</span>
 
             <label for="message">Besked:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
+            <span class="error-message">Besked er påkrævet.</span>
 
             <button type="submit" class="btn">Send besked</button>
         </form>

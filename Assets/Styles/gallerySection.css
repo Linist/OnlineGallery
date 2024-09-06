@@ -1,0 +1,61 @@
+/* ----------- GALLERY SECTION --------------- */
+
+/* Overall Gallery Section Styling */
+.gallery-section {
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Light grey background */
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 1200px; /* Maximum width of the gallery section */
+    text-align: center;
+}
+
+.flickr-albums-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* This will center the albums and manage spacing */
+    padding: 20px;
+}
+
+.flickr-album {
+    flex: 1 1 300px; /* flex-grow, flex-shrink, flex-basis */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.flickr-album img {
+    width: 100%; /* Make the image responsive within its container */
+    height: auto;
+    display: block; /* Remove any extra space below the image */
+}
+
+
+/* Styling for the Flickr embed container */
+.flickr-display {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.flickr-display h3 {
+    color: #333;
+}
+
+.flickr-embed img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Hover effects for interactive elements */
+.flickr-embed a {
+    transition: transform 0.3s ease-in-out;
+}
+
+.flickr-embed a:hover {
+    transform: scale(1.05); /* Slightly enlarge the link area on hover */
+}
