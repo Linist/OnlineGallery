@@ -13,49 +13,50 @@
 .flickr-albums-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* This will center the albums and manage spacing */
-    padding: 20px;
+    justify-content: space-evenly;
+    padding: 20px; /* Padding between gallery items */
+    gap: 20px;
 }
 
 .flickr-album {
-    flex: 1 1 300px; /* flex-grow, flex-shrink, flex-basis */
+    flex: 1 1 300px; /* Make each album minimum 300px wide */
+    max-width: 100%; /* Prevent album from exceeding screen width */
     margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-}
-
-.flickr-album img {
-    width: 100%; /* Make the image responsive within its container */
-    height: auto;
-    display: block; /* Remove any extra space below the image */
-}
-
-
-/* Styling for the Flickr embed container */
-.flickr-display {
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.flickr-display h3 {
-    color: #333;
-}
-
-.flickr-embed img {
-    width: 100%; /* Make the image responsive */
-    height: auto;
-    border-radius: 8px; /* Rounded corners for images */
-}
-
-/* Hover effects for interactive elements */
-.flickr-embed a {
     transition: transform 0.3s ease-in-out;
 }
 
-.flickr-embed a:hover {
-    transform: scale(1.05); /* Slightly enlarge the link area on hover */
+.flickr-album img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    display: block; /* Remove any extra space below the image */
+    object-fit: cover; /* Ensure images fill the container without stretching */
+}
+
+.flickr-album:hover {
+    transform: scale(1.05); /* Slight hover effect */
+}
+
+/* Media query for screens less than 900px wide (for tablets) */
+@media (max-width: 900px) {
+    .flickr-album {
+        flex: 1 1 calc(50% - 20px); /* 50% width for tablets */
+        max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
+    }
+}
+
+/* Media query for screens less than 600px wide (for phones) */
+@media (max-width: 600px) {
+    .flickr-albums-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .flickr-album {
+        flex: 1 1 100%; /* Full width for mobile */
+        margin-bottom: 20px;
+        max-width: 100%; /* Make sure it doesn't overflow */
+    }
 }

@@ -16,7 +16,7 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 30px;
-    text-align: Center;
+    text-align: center;
     max-width: 800px;
     margin: 0 auto 30px;
 }
@@ -36,7 +36,8 @@
 }
 
 .contact-image {
-    flex: 0 0 300px; /* Adjust width as needed */
+    flex: 0 0 300px; /* Fixed width for the image section */
+    text-align: left;
 }
 
 .contact-image img {
@@ -49,7 +50,7 @@
 .contact-form {
     flex: 1;
     text-align: left;
-    max-width: 600px;
+    max-width: 600px; /* Limit the form width */
 }
 
 .contact-form label {
@@ -64,6 +65,12 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #333;
+    outline: none;
 }
 
 .contact-form button {
@@ -74,8 +81,48 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
     background-color: #555;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-image, .contact-form {
+        width: 100%;
+    }
+
+    .contact-image {
+        margin-bottom: 20px;
+    }
+}
+
+/* Wide screens: Divide contact section into two columns */
+@media (min-width: 1024px) {
+    .contact-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .contact-image, .contact-form {
+        width: 45%; /* Each section takes up 45% of the available space */
+    }
 }

@@ -27,7 +27,7 @@
 }
 
 .about-section h2 {
-    font-size: 2.5rem;
+    font-size: 6vw; /* Responsive font size */
     margin-bottom: 20px;
 }
 
@@ -36,6 +36,38 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.8;
+}
+
+/* Media query for medium screens (tablets) */
+@media (max-width: 1024px) {
+    .about-section {
+        padding: 80px 20px;
+    }
+
+    .about-section h2 {
+        font-size: 4.5vw; /* Scale heading down on medium screens */
+    }
+
+    .about-section p {
+        font-size: 1rem; /* Slightly smaller text for tablets */
+        max-width: 90%; /* Ensure text fills more space */
+    }
+}
+
+/* Media query for smaller screens (phones) */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 20px;
+    }
+
+    .about-section h2 {
+        font-size: 5vw; /* Adjust heading size for mobile */
+    }
+
+    .about-section p {
+        font-size: 1rem; /* Keep paragraph size readable */
+        max-width: 90%; /* Use more screen width for mobile */
+    }
 }
 
 /* Media query for larger screens */
