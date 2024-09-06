@@ -76,3 +76,67 @@ function openNav() {
 function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
+
+
+function validateForm() {
+    let valid = true;
+
+    // Name validation
+    const name = document.getElementById('name').value.trim();
+    if (name === '') {
+        document.getElementById('name-error').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('name-error').style.display = 'none';
+    }
+
+    // Email validation
+    const email = document.getElementById('email').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email pattern
+    if (email === '' || !emailRegex.test(email)) {
+        document.getElementById('email-error').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('email-error').style.display = 'none';
+    }
+
+    // Message validation
+    const message = document.getElementById('message').value.trim();
+    if (message === '') {
+        document.getElementById('message-error').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('message-error').style.display = 'none';
+    }
+
+    return valid; // Return false if the form is invalid to prevent submission
+}
+
+    // Function to highlight the current link
+    function highlightCurrentLink() {
+        const sections = document.querySelectorAll("section"); // Assuming your sections have IDs like #home, #about, etc.
+        const navLinks = document.querySelectorAll(".desktop-nav li a");
+
+        // Get the scroll position of the page
+        let scrollPosition = window.scrollY;
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100; // Offset for better accuracy
+            const sectionHeight = section.clientHeight;
+            const sectionId = section.getAttribute("id");
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove 'active' class from all links
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                });
+
+                // Add 'active' class to the current section link
+                document.querySelector(`.desktop-nav li a[href*="${sectionId}"]`).classList.add("active");
+            }
+        });
+    }
+
+    // Event listeners for scroll and load to update the active link
+    window.addEventListener("scroll", highlightCurrentLink);
+    window.addEventListener("load", highlightCurrentLink);
