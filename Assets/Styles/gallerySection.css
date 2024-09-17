@@ -39,6 +39,12 @@
     transform: scale(1.05); /* Slight hover effect */
 }
 
+.disabled-link {
+    pointer-events: none;
+    cursor: default;
+}
+
+
 /* Media query for screens less than 900px wide (for tablets) */
 @media (max-width: 900px) {
     .flickr-album {

@@ -74,20 +74,22 @@
     <div class="flickr-albums-container">
         <div class="flickr-album">
             <h2>Malerier</h2> <!-- Subtitle for the first album -->
-            <a data-flickr-embed="true" href="https://www.flickr.com/photos/201351918@N05/albums/72177720320052401" title="Malerier">
+            <a data-flickr-embed="true" href="https://www.flickr.com/photos/201351918@N05/albums/72177720320052401" title="Malerier" class="flickr-link">
                 <img src="https://live.staticflickr.com/65535/53969526327_26b6cc0de2.jpg" width="640" height="480" alt="A collection of paintings by Peter Petersen" loading="lazy" />
             </a>
-            <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
         </div>
         <div class="flickr-album">
             <h2>Blyant & Kultegning</h2> <!-- Subtitle for the second album -->
-            <a data-flickr-embed="true" href="https://www.flickr.com/photos/201351918@N05/albums/72177720320056127" title="Blyant & Kultegning">
+            <a data-flickr-embed="true" href="https://www.flickr.com/photos/201351918@N05/albums/72177720320056127" title="Blyant & Kultegning" class="flickr-link">
                 <img src="https://live.staticflickr.com/65535/53970894440_6bdce10dac.jpg" width="640" height="480" alt="Pencil and charcoal drawings by Peter Petersen" loading="lazy"/>
             </a>
-            <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
         </div>
     </div>
+    <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 </section>
+
+
+
 
 <!-- About Sektion -->
 <section id="about" class="about-section">
@@ -170,5 +172,14 @@
 </footer>
 
 <script src="scripts.js"></script>
+<script>
+    // Add event listener for preventing navigation
+    document.querySelectorAll('.flickr-link').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Prevent navigation to Flickr album page
+            event.preventDefault();
+        });
+    });
+</script>
 </body>
 </html>

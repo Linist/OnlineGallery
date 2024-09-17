@@ -62,6 +62,16 @@ function fetchFlickrPhotos() {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Find all anchor tags with class no-link
+    document.querySelectorAll('.no-link').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Prevent navigation to the Flickr album
+            event.preventDefault();
+        });
+    });
+});
+
 /* remove the link from the flickr images*/ 
     // Select all links inside the flickr-album class
     document.querySelectorAll('.flickr-album a').forEach(link => {
